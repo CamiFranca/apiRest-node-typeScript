@@ -1,6 +1,6 @@
-import { server } from "./server/Server";
+import  server  from "./server/Server";
 
-server.listen(3333, () => {
-  console.log('Servidor rodando na porta 3333!');
+server.listen(process.env.PORT || 3333, () => {
+  console.log(`Servidor rodando na porta ${process.env.PORT || 3333}`);
 });
  
