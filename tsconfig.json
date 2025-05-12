@@ -20,7 +20,9 @@
       "skipLibCheck": true,               // Ignora checagens de tipo nas bibliotecas
       "forceConsistentCasingInFileNames": true, // Garante consistência no uso de maiúsculas e minúsculas no nome dos arquivos
       "outDir": "./dist",                 // Define o diretório onde os arquivos compilados serão gerados
-      "rootDir": "./src"                  // Define o diretório de origem dos arquivos TypeScript
+      "rootDir": "./src",                  // Define o diretório de origem dos arquivos TypeScript
+      "noUnusedLocals": false,
+      "noUnusedParameters": false,
     },
     "include": [
       "src/**/*.ts"                        // Incluir todos os arquivos TypeScript na pasta src
