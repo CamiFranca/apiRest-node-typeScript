@@ -4,6 +4,7 @@
 //   nome: string
 // }
 
-export type ReturnOfCreate = {
+export type TReturnOfCreate = {
   nome: string
+  estado: string
 }

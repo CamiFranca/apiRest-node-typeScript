@@ -1,40 +1,32 @@
-import e, { Request, Response } from "express"
-import { ReturnOfCreate } from "./typeCities"
-import { StatusCodes } from "http-status-codes"
+import { Request, Response } from "express"
+import { TReturnOfCreate } from "./typeCities"
 import * as yup from "yup"
+import { validation } from "../../shared/middlewares/Validations"
 
 
 
-const bodyValidation: yup.Schema<ReturnOfCreate> = yup.object().shape({
+export const createValidation = validation((getSchema) => ({
+  body: getSchema<TReturnOfCreate>(yup.object().shape({
+    nome: yup.string().strict().required().min(3),
+    estado: yup.string().strict().required().min(3)
 
-  nome: yup.string().required().min(3),
-})
-
-
-
-export const create = async (req: Request<{}, {}, ReturnOfCreate>, res: Response) => {
-
-
-  let valedetedData: ReturnOfCreate | undefined = undefined
-
-  try {
-
-    valedetedData = await bodyValidation.validate(req.body)
-
-  } catch (error) {
-    const yupError = error as yup.ValidationError
-
-    return res.json({
-      errors: {
-        default: yupError.message
-      }
-    })
-  }
+  }))
+}))
 
 
-  console.log(valedetedData)
 
 
-  return res.send(valedetedData)
+
+
+
+
+
+
+
+
+export const create = async (req: Request<{}, {}, TReturnOfCreate>, res: Response) => {
+
+  return res.send(req.body)
+
 }
 
