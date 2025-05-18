@@ -69,7 +69,7 @@ export const validation: TValidation = (GetAllSchemas) => {
     Object.entries(schemas).forEach(([Key, schema]) => {
       try {
         schema!.validateSync(req[Key as TProperty], { abortEarly: false })
-        return next()
+
       } catch (error) {
         const yupError = error as yup.ValidationError
         const errors: Record<string, string> = {}
@@ -86,7 +86,7 @@ export const validation: TValidation = (GetAllSchemas) => {
     if (Object.entries(errosResult).length === 0) {
       return next()
     } else {
-      return res.status(StatusCodes.BAD_REQUEST).json({ errors: errosResult }) // corrigido 'joson' para 'json'
+      return res.status(StatusCodes.BAD_REQUEST).json({ errors: errosResult })
     }
   }
 }
