@@ -1,13 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-const http_status_codes_1 = require("http-status-codes");
+const controllers_1 = require("./../controllers");
 const router = (0, express_1.Router)();
 router.get('/', (req, res) => {
     return res.send("olá dev!");
 });
-router.post('/teste', (req, res) => {
-    console.log(req.body.teste);
-    return res.status(http_status_codes_1.StatusCodes.ACCEPTED).send("testando");
-});
+router.post('/cidades', controllers_1.CitiesController.createValidation, controllers_1.CitiesController.create);
+router.get('/cidades/:id', controllers_1.CitiesController.getByIdValidation, controllers_1.CitiesController.getById);
+router.get('/cidades', controllers_1.CitiesController.gettAllValidation, controllers_1.CitiesController.getAll);
+router.put('/cidades/:id', controllers_1.CitiesController.updateValidation, controllers_1.CitiesController.update);
+router.delete('/cidades/:id', controllers_1.CitiesController.deleteValidation, controllers_1.CitiesController.deleteById);
 exports.default = router;

@@ -1,34 +1,23 @@
-// {
-//     "compilerOptions": {
-//       "target": "es6",                    
-//       "module": "commonjs",               
-//       "rootDir": "./src",                 
-//       "outDir": "./dist",                 
-//       "strict": true,                     
-//       "esModuleInterop": true,           
-//       "forceConsistentCasingInFileNames": true,
-//       "skipLibCheck": true
-//     },
-//     "include": ["src"]
-//   }
-  {
-    "compilerOptions": {
-      "target": "ES6",                    // Define a versão de JavaScript que o TypeScript deve gerar
-      "module": "CommonJS",               // Define o módulo como CommonJS (o usado pelo Node.js)
-      "esModuleInterop": true,            // Habilita a interoperabilidade entre módulos ES6 e CommonJS
-      "strict": true,                     // Ativa verificações rigorosas de tipo
-      "skipLibCheck": true,               // Ignora checagens de tipo nas bibliotecas
-      "forceConsistentCasingInFileNames": true, // Garante consistência no uso de maiúsculas e minúsculas no nome dos arquivos
-      "outDir": "./dist",                 // Define o diretório onde os arquivos compilados serão gerados
-      "rootDir": "./src",                  // Define o diretório de origem dos arquivos TypeScript
-      "noUnusedLocals": false,
-      "noUnusedParameters": false,
-    },
-    "include": [
-      "src/**/*.ts"                        // Incluir todos os arquivos TypeScript na pasta src
-    ],
-    "exclude": [
-      "node_modules"                       // Exclui a pasta node_modules
-    ]
-  }
-  
+{
+  "compilerOptions": {
+    "target": "ES6", // Define a versão de JavaScript que o TypeScript deve gerar
+    "module": "CommonJS", // Define o módulo como CommonJS (o usado pelo Node.js)
+    "esModuleInterop": true, // Habilita a interoperabilidade entre módulos ES6 e CommonJS
+    "strict": true, // Ativa verificações rigorosas de tipo
+    "skipLibCheck": true, // Ignora checagens de tipo nas bibliotecas
+    "forceConsistentCasingInFileNames": true, // Garante consistência no uso de maiúsculas e minúsculas no nome dos arquivos
+    "outDir": "./dist", // Define o diretório onde os arquivos compilados serão gerados
+    "rootDir": "./src", // Define o diretório de origem dos arquivos TypeScript
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+  },
+  "include": [
+    "src/**/*.ts" // Incluir todos os arquivos TypeScript na pasta src
+  ],
+  "exclude": [
+    "node_modules", // Exclui a pasta node_modules
+    "./jest.config.ts",
+    "./testes",
+    "./dist"
+  ],
+}

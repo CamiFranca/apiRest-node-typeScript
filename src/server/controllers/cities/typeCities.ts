@@ -8,9 +8,9 @@ export type TReturnOfCreate = {
 }
 
 export type TQueryPropsGetAll = {
-  page?: number,
-  limit?: number,
-  filter?: string
+  page?: number | null,
+  limit?: number | null,
+  filter?: string | null
 }
 
 export type TParamsGetById = {
