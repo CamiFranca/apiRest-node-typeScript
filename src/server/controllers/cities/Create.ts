@@ -17,7 +17,7 @@ export const createValidation = validation((getSchema) => ({
 
 
 export const create = async (req: Request<{}, {}, TReturnOfCreate>, res: Response) => {
-  console.log(req.body)
+ 
 
   return res.status(StatusCodes.CREATED).json(1)
 

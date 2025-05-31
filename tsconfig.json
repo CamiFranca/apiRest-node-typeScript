@@ -17,7 +17,7 @@
   "exclude": [
     "node_modules", // Exclui a pasta node_modules
     "./jest.config.ts",
-    "./testes",
+    "tests",
     "./dist"
   ],
 }
